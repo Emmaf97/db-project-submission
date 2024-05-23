@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% if username %}
+    <h2>Welcome, {{ username }}</h2>
+    <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+{% endif %}
+
+<!-- <div class="shadow p-3 bg-dark border class">
+<h2 class="slogan">Transform Your Body,</h2>
+<h2 class="slogan">Elevate Your Life:</h2>
+<h2 class="slogan"> Your Journey Starts Here!</h2>
+</div> -->
+
+<section class="border class">
+  <h2 class="h2 float">Signup page</h2>
+</section>
+
+<section class="border class">
+</section>
+{% endblock %}
+
+
+

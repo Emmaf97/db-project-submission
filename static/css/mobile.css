@@ -1,0 +1,358 @@
+body {
+    background-color: rgb(32, 36, 40);
+}
+
+.body-light {
+    background-color: white;
+}
+
+h2 {
+    color: rgb(248, 2, 2);
+}
+
+.logo.text {
+    margin-top: 7%;
+    color: rgb(249, 247, 247);
+    font-size: 3em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    text-shadow: 0px 0px 10px red,
+        0px 0px 20px red,
+        0px 0px 40px red,
+        0px 0px 60px red,
+        0px 0px 80px red,
+        0px 0px 120px red;
+}
+
+.border {
+    border: 1px solid grey !important;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    background-color: red;
+}
+
+.btn-primary.signup{
+    display: none;
+    }
+    
+.nav {
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 350px;
+    background-color: red;
+    justify-content: center;
+}
+
+.alert-primary {
+    color: orangered;
+}
+
+dl,
+ol,
+ul {
+    margin-top: 1%;
+    margin-bottom: 1rem;
+    display: inline-grid;
+    padding-left: 0;
+}
+
+.container {
+    display: grid;
+}
+
+.logo.text {
+    margin-top: 1%;
+}
+
+li {
+    display: inline;
+    list-style: none;
+    border-radius: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+iframe {
+    width: 250px;
+    height: 450px;
+    margin-top: 20px;
+}
+
+#image-grid {
+    width: 100%;
+    border-radius: 3vh;
+
+}
+
+#trainer-grid {
+    background-color: white;
+    border-radius: 3vh;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.slogan {
+    margin: auto;
+}
+
+.card {
+    background-color: #f6f5f5;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-trainer {
+    width: 100%;
+}
+
+.inner-card-nav {
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.card-schedule {
+    width: 100%;
+}
+
+.card-img-top {
+    max-width: 70%;
+    height: auto;
+    border: solid 2px red;
+    border-radius: 20px;
+}
+
+.card-img-about {
+    display: none;
+}
+
+.card-dark {
+    background-color: black;
+    border: solid 1px grey;
+}
+
+.card-nav-dark {
+    background-color: black;
+    border: solid 1px grey;
+}
+
+.card-navigation {
+    background-image: url(../images/gym-slider.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: block;
+}
+
+.card-navigation.trainer-male {
+    background-image: none;
+    background-color: grey;
+    height: 80vh;
+    width: 53vh;
+
+}
+
+.card-navigation.trainer-female {
+    background-image: none;
+    background-color: grey;
+    height: 83vh;
+    width: 53vh;
+}
+
+.card>#card-contact {
+    height: 90vh;
+    width: 70vw;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card>#card-login {
+    height: 90vh;
+    width: 70vw;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    border-radius: 3vh;
+}
+
+.container.outer {
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    align-items: end;
+    flex-wrap: nowrap;
+}
+
+.container.inner {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.p {
+    color: white;
+}
+
+.p.left {
+    margin-right: 0%;
+    max-width: 89%;
+}
+
+.p-light {
+    color: rgb(32, 36, 40);
+}
+
+.card-text {
+    color: White;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.card-text-light {
+    color: rgb(32, 36, 40);
+}
+
+.card-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.h2.float {
+    margin-top: 2%;
+}
+
+.form-row {
+    margin-left: 14%
+}
+
+.col-md-6 {
+    width: 84% !important;
+}
+
+fieldset {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    font-size: 35px;
+    float: inline-end;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.dark-icon {
+
+    font-size: 35px;
+    float: inline-end;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.text-primary {
+    color: red !important;
+}
+
+li::marker {
+    content: none;
+}
+
+a {
+    color: #2196f3;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(57, 5, 177);
+}
+
+#base {
+    display: grid;
+    grid-template-areas: "head" "nav" "icon" "main" "foot";
+    grid-gap: 20px;
+    text-align: center;
+    width: 97%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#base>header {
+    grid-area: head;
+    display: grid;
+    color: rgb(246, 2, 2);
+    font-weight: bolder;
+    width: 96%;
+    height: 111px;
+}
+
+#base>nav {
+    grid-area: nav;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 20px;
+    width: 96%;
+}
+
+#base>#icon {
+    grid-area: icon;
+    display: flex;
+    width: 54%;
+    margin-left: 23%;
+    background-color: #f9fcfc;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+#base>main {
+    grid-area: main;
+    width: 96%;
+    color: rgb(241, 8, 8);
+    font-weight: bolder;
+}
+
+#base>footer {
+    grid-area: foot;
+    display: block;
+    color: whitesmoke;
+    width: 96%;
+    text-align: center;
+    border: solid grey 1px;
+    border-radius: 20px;
+}

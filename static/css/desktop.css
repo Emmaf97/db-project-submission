@@ -1,0 +1,366 @@
+body {
+    background-color: rgb(32, 36, 40);
+}
+
+.body-light {
+    background-color: white;
+}
+
+h2 {
+    color: rgb(248, 2, 2);
+}
+
+.border {
+    border: 1px solid grey !important;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: red;
+}
+.btn-primary.signup{
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: red;
+}
+
+.nav {
+    border-radius: 10px;
+    display: inline-flex;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 200px;
+    background-color: red;
+    justify-content: center;
+}
+
+.alert-primary {
+    color: orangered;
+}
+
+dl,
+ol,
+ul {
+    margin-top: 1%;
+    margin-bottom: 1rem;
+}
+
+.container {
+    display: grid;
+}
+
+
+li {
+    margin-left: 3%;
+    display: inline;
+    list-style: none;
+    border-radius: 20px;
+}
+
+.mb-3 {                                                           /* using bootstrap library and overwriting the classes that I need to have custom decoration.*/
+    margin-left: 3rem !important;
+    margin-right: 4rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+iframe {
+    width: 250px;
+    height: 450px;
+}
+
+#image-grid {
+    background-color: white;
+    border-radius: 3vh;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+#trainer-grid {
+    background-color: white;
+    border-radius: 3vh;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.slogan {
+    margin: auto;
+}
+
+.card {
+    background-color: #f6f5f5;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-trainer {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-trainer-flipped {                                     /* Creating flipped card that displays in reverse, used flex and flex-direction to achieve this.*/
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    float: right;
+    flex-direction: row-reverse;
+}
+
+.card-schedule {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-schedule-flipped {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    float: right;
+    flex-direction: row;
+}
+
+.card-img-top {
+    max-width: 70%;
+    height: auto;
+    border: solid 2px red;
+    border-radius: 20px;
+}
+
+.card-img-about {
+    max-width: 70%;
+    height: 700px;
+    border: solid 2px red;
+    border-radius: 20px;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+.card-dark {
+    background-color: black;
+    border: solid 1px grey;
+}
+
+.card-nav-dark {
+    background-color: black;
+    border: solid 1px grey;
+}
+
+.card-navigation {
+    background-image: url(../images/gym-slider.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+}
+
+.card-navigation.trainer-male {
+    background-image: none;
+    background-color: grey;
+    height: 60vh;
+
+}
+
+.card-navigation.trainer-female {
+    background-image: none;
+    background-color: grey;
+    height: 60vh;
+}
+
+.card>#card-contact {
+    height: 90vh;
+    width: 70vw;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card>#card-login {
+    height: 90vh;
+    width: 70vw;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    border-radius: 3vh;
+}
+
+.container.outer {
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    align-items: end;
+    flex-wrap: nowrap;
+}
+
+.container.inner {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.p {
+    color: white;
+}
+
+.p-light {
+    color: rgb(32, 36, 40);
+}
+
+.p.left {
+    margin-right: 0%;
+    max-width: 69%;
+}
+
+.card-text {
+    color: White
+}
+
+.card-text-light {
+    color: rgb(32, 36, 40);
+}
+
+.h2.float {
+    margin-top: 2%;
+}
+
+.form-row {
+    margin-left: 14%
+}
+
+.col-md-6 {
+    width: 84% !important;
+}
+
+fieldset {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-symbols-outlined {                                   /* Using google icon to create dark mode icon and styling it based on light or darkmode*/
+    font-size: 35px;
+    float: inline-end;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.dark-icon {
+
+    font-size: 35px;
+    float: inline-end;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.text-primary {
+    color: red !important;
+}
+
+li::marker {
+    content: none;
+}
+
+a {
+    color: #2196f3;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(57, 5, 177);
+}
+
+#base {                                                             /* Creating Grid to display content. Using this layout allowed me to get areas designed much quicker and with much easier naming conventions.*/
+    display: grid;
+    grid-template-areas: "head" "nav" "icon" "main" "foot";
+    grid-gap: 20px;
+    text-align: center;
+    width: 97%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#base>header {
+    grid-area: head;
+    display: grid;
+    color: rgb(246, 2, 2);
+    border: 1px solid grey;
+    font-weight: bolder;
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+}
+
+#base>nav {
+    grid-area: nav;
+    background-color: #202428;
+    font-size: large;
+    border: 1px solid grey;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+#base>#icon {
+    grid-area: icon;
+    width: 12%;
+    margin-left: 88%;
+    background-color: #f9fcfc;
+    font-size: large;
+    border: 1px solid grey;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+#base>main {
+    grid-area: main;
+    background-size: 100%;
+    color: rgb(241, 8, 8);
+    font-weight: bolder;
+}
+
+#base>footer {
+    grid-area: foot;
+    display: block;
+    color: whitesmoke;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border: solid grey 1px;
+    border-radius: 20px;
+}
