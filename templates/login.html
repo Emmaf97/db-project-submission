@@ -3,15 +3,40 @@
 {% block main %}
 {% if username %}
     <h2>Welcome, {{ username }}</h2>
-    <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+<a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
 {% endif %}
 
-<section class="border class">
-  <h2 class="h2 float">login page</h2>
+<h1>Login</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            {% if category == 'error' %}
+                <div class="alert alert-danger">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    {% endwith %}
+<section id="login">
+    <div class="border class" id="card-login">
+        <div id="card-login-body">
+            <fieldset class="text-primary">
+                <legend>Please enter your details below.</legend>
+                <form id="login-form" class="mb-3" action="/login" method="POST">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">UserName</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="text" id="password" class="form-control" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
 </section>
-
-<section class="border class">
-</section>
+<!-- <script src="{{ url_for('static', filename='js/formValidation.js') }}"></script> -->
 {% endblock %}
 
 
