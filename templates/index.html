@@ -7,11 +7,86 @@
 {% endif %}
 
 <section class="border class">
-  <h2 class="h2 float">Welcome to to the Nexus!!</h2>
-</section>
-
-<section class="border class">
-</section>
+    <h2 class="h2 float">Welcome to to the Nexus!!</h2>
+    <div class="container outer">
+      <div class="container inner">
+      <p class="p left"> Welcome to BodyForge, where we forge bodies of strength, resilience, and confidence. At
+        BodyForge, we believe that everyone has the potential to sculpt their ideal physique and unlock their inner
+        strength. Whether you're a seasoned athlete or just beginning your fitness journey, our state-of-the-art facility
+        and expert trainers are here to support you every step of the way.
+      </p>
+        <p class="p left">Founded on the principles of dedication, determination, and community, BodyForge is more than just a gym—it's a
+        place where individuals come together to challenge themselves, break through barriers, and achieve their fitness
+        goals. Our diverse range of equipment, innovative classes, and personalized training programs cater to all fitness
+        levels and interests, ensuring that everyone can find their path to success.</p>
+        <p class="p left">From intense strength training sessions to invigorating cardio workouts and everything in between, BodyForge
+          offers a comprehensive approach to fitness that prioritizes both physical and mental well-being. Our passionate
+          instructors are committed to helping you push past your limits, conquer obstacles, and embrace your full
+          potential, both inside and outside the gym.</p>
+        <p class="p left">But BodyForge is more than just a place to work out—it's a community of like-minded individuals who share a common
+          goal of self-improvement and empowerment. Whether you're sweating it out in a group class, hitting the weights
+          solo, or participating in one of our social events, you'll find camaraderie, support, and encouragement every step
+          of the way.</p>
+        <p class="p left">So, are you ready to forge the body you've always wanted? Join us at BodyForge and let's embark on this journey
+          together. Your transformation starts here.</p>
+        </div>
+      <img src="../static/images/gym-slider2.jpg" class="card-img-about" alt="game controller image">
+    </div>
+  </section> 
+  <section class="border class">
+    <div class="card-trainer mb-3">
+      <img src="../static/images/gym-slider.jpg" class="card-img-top" alt="esports competitor picture">
+      <div class="card-body">
+        <h5 class="card-title">All</h5>
+        <h5 class="card-title">Your Eports Gaming,</h5>
+        <h5 class="card-title">News</h5>
+        <p class="card-text">We offer leading industry standards and techniques to enhance your fitness journey.</p>
+      </div>
+    </div>
+    <div class="card-trainer-flipped mb-3">
+      <img src="../static/images/gym-slider.jpg" class="card-img-top" alt="test picture 1">
+      <div class="card-body">
+        <h5 class="card-title">Check out the latest released Gaming Merchandise.</h5>
+        <p class="card-text">Our coaches are qualified professionals with years of experience and leading industry
+          training.</p>
+      </div>
+    </div>
+    <div class="card-trainer mb-3">
+      <img src="../static/images/gym-slider.jpg" class="card-img-top" alt="test picture 2">
+      <div class="card-body">
+        <h5 class="card-title">Latest Gaming News</h5>
+        <p class="card-text">Our Trainers are qualified nutrition experts and with years of experience in achieveing
+          results.</p>
+      </div>
+    </div>
+  </section>
+  <section id="image-grid" class="bg-dark border class">
+    <div class="card card-navigation shadow border class">
+      <div class="inner-card-nav">
+      <h2 class="h2-navigation">Esports</h2>
+      <a class="btn btn-primary" href="{{ url_for('esports')}}">Click Here</a>
+      </div>
+    </div>
+    <div class="card card-navigation shadow border class">
+      <div class="inner-card-nav">
+      <h2>News</h2>
+      <a class="btn btn-primary" href="{{ url_for('contact') }}">Click Here</a>
+    </div>
+    </div>
+    <div class="card card-navigation shadow border class">
+      <div class="inner-card-nav">
+      <h2>Store</h2>
+      <a class="btn btn-primary" href="{{ url_for('store')}}">Click Here</a>
+    </div>
+    </div>
+    <div class="card card-navigation shadow border class">
+      <div class="inner-card-nav">
+      <h2>Contact</h2>
+      <a class="btn btn-primary" href="{{ url_for('contact')}}">Click
+        Here</a>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 

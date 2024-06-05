@@ -5,7 +5,10 @@ body {
 .body-light {
     background-color: white;
 }
-
+h1{
+    margin-top: auto;
+    margin-bottom: auto;
+}
 h2 {
     color: rgb(248, 2, 2);
 }
