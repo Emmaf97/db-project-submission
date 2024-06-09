@@ -20,6 +20,12 @@
 `e.g. pip install flask`
 will install the flask package and its other dependencies.
 
+# Adding Project to render
+## Link Github account to render.com account
+## Then create an instance and select region that is local to you e.g frankfurt
+## Then link instance to github repo and deploy project.
+## Then create envirionment variables that will be used in project on render.com
+
 ## Feature 1
 #### --- LightMode ---
 Users can switch from Darkmode to LightMode by clicking on the icon.
