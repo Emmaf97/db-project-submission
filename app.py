@@ -6,7 +6,6 @@ from models import db, User, UserAccount, Products , UserComments
 
 
 app = Flask(__name__)
-# app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('nexusdb')
 db.init_app(app)												
 
@@ -75,6 +74,65 @@ def logout():
     session.pop('username', None)
     return render_template("login.html")
 
+@app.route('/edituser', methods=["GET"])
+def edituser():
+    username = session.get('username')
+    
+    user_account = UserAccount.query.filter_by(username=username).first()
+    user = User.query.filter_by(user_account_id=user_account.id).first()
+        
+    return render_template('edituser.html', user=user, user_account=user_account)
+
+@app.route('/edituserrequest', methods=["GET","POST"])
+def edituserrequest():
+    username = session.get('username')
+    
+    # Retrieve user account data
+    user_account = UserAccount.query.filter_by(username=username).first()
+    print(user_account.username)
+    # Check if user account exists
+    if user_account:
+        # Retrieve user data using user_account_id
+        user = User.query.filter_by(user_account_id=user_account.id).first()
+        print(user.id)
+        
+        # Check if user exists
+        if user:
+            if request.method == 'POST':
+                # Handle form submission
+                new_firstname = request.form.get("fname")
+                new_lastname = request.form.get("lname")
+                new_address = request.form.get("address")
+                new_username = request.form.get("username")
+                new_password = request.form.get("password")
+                
+                # Update user attributes
+                user.fname = new_firstname
+                user.lname = new_lastname
+                user.address = new_address
+                
+                # Update user account attributes
+                user_account.username = new_username
+                user_account.password = new_password 
+
+                db.session.commit()
+
+                # Update session with new username if it has been changed
+                session['username'] = new_username
+
+                return redirect(url_for('index'))
+            else:
+                # Render edituser.html template with user data
+                return render_template('edituser.html', user=user, user_account=user_account)
+        else:
+            # Handle case where user does not exist
+            return render_template('error.html', message='User not found')
+    else:
+        # Handle case where user account does not exist
+        return render_template('index.html')
+        
+    
+    
 @app.route('/deleteuser', methods=["GET", "POST"])
 def deleteuser():
     username = session.get('username')
@@ -96,13 +154,6 @@ def signup():
 @app.route('/register', methods=["POST"])
 def register():
     print("Form data:", request.form)
-    new_User = User(
-        fname = request.form.get("fname"),
-        lname = request.form.get("lname"),
-        address = request.form.get("address")
-    )
-    
-    db.session.add(new_User)
     
     new_UserAccount = UserAccount(
         # email = request.form.get("email"),
@@ -110,8 +161,20 @@ def register():
         password = request.form.get("password")
         
     )
-    
     db.session.add(new_UserAccount)
+    
+    # new_UserAccount = session.get('id')
+      
+    db.session.add(new_UserAccount)
+    db.session.commit() 
+    
+    new_User = User(
+        fname = request.form.get("fname"),
+        lname = request.form.get("lname"),
+        address = request.form.get("address"),
+        user_account_id=new_UserAccount.id
+    )
+    db.session.add(new_User)
     db.session.commit()
     
     return redirect(url_for('login'))
