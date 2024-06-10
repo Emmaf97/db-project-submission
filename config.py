@@ -2,4 +2,4 @@ import os
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-SQLALCHEMY_DATABASE_URI = 'nexusdb'
+SQLALCHEMY_DATABASE_URI = os.environ.get('nexusdb')
