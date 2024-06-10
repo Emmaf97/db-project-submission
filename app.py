@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, url_for, redirect, session
-from sqlalchemy import text										
+from sqlalchemy import text								
+from config import os		
 # from models import db, User, Email     
 from models import db, User, UserAccount, Products , UserComments  
 
 
 app = Flask(__name__)
-app.config.from_object('config')
+# app.config.from_object('config')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('nexusdb')
 db.init_app(app)												
 
 loggedin = False
