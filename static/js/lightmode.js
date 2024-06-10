@@ -14,6 +14,7 @@ function checkLightActive() {
     }
 }
 
+
 function lightMode() {
     let { btnElements, head, nav, pLight, icon, body, cardtext  } = getIndexDocElements();
     for (let i = 0; i < btnElements.length; i++) {
@@ -62,4 +63,5 @@ function getIndexDocElements() {
     let pLight = document.querySelectorAll(".p.left")
     let cardtext = document.querySelectorAll(".card-text")
     return { btnElements, body, pLight, cardtext, icon,head, main,nav, foot};
+    // 
 }
