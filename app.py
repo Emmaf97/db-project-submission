@@ -7,12 +7,15 @@ from models import db, User, UserAccount, Products , UserComments
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('nexusdb')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 db.init_app(app)												
 
 loggedin = False
 
 with app.app_context():
     db.create_all()
+
+
 
 @app.route("/")
 def index():
