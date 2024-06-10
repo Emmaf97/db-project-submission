@@ -3,6 +3,10 @@
 {% block main %}
 {% if username %}
     <h2>Welcome, {{ username }}</h2>
+    {#  <a class="btn btn-primary" href="{{ url_for('edit') }}">Edit Account</a> 
+    <a class="btn btn-primary" href="{{ url_for('delete') }}">Delete Account</a> 
+    #} 
+    <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a> 
 {% endif %}
 
 <section class="border class">

@@ -67,6 +67,11 @@ def loginuser():
     else:
         return render_template("login.html")
     
+@app.route('/logout', methods=["GET", "POST"])
+def logout():
+    session.pop('loggedin', None)
+    session.pop('username', None)
+    return render_template("login.html")
     
 @app.route('/signup')
 def signup():
