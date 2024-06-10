@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, session
 from sqlalchemy import text										
 # from models import db, User, Email     
 from models import db, User, UserAccount, Products , UserComments  
@@ -8,33 +8,66 @@ app = Flask(__name__)
 app.config.from_object('config')
 db.init_app(app)												
 
+loggedin = False
+
 with app.app_context():
     db.create_all()
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    # 
+    if 'loggedin' in session and session['loggedin']:
+        return render_template('index.html', username=session.get('username'))
+    else:
+        return render_template('index.html')
 
 @app.route("/esports")
 def esports():
-    return render_template("esports.html")
+     if 'loggedin' in session and session['loggedin']:
+        return render_template('index.html', username=session.get('username'))
+     else:
+        return render_template("esports.html")
 
 @app.route("/news")
 def news():
-    return render_template("news.html")
+     if 'loggedin' in session and session['loggedin']:
+        return render_template('index.html', username=session.get('username'))
+     else:
+        return render_template("news.html")
 
 @app.route("/store")
 def store():
-    return render_template("store.html")
+     if 'loggedin' in session and session['loggedin']:
+        return render_template('index.html', username=session.get('username'))
+     else:
+        return render_template("store.html")
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+     if 'loggedin' in session and session['loggedin']:
+        return render_template('index.html', username=session.get('username'))
+     else:
+        return render_template("contact.html")
 
 @app.route('/login')
 def login():
-    return render_template("login.html")
+        return render_template("login.html")
 
+@app.route('/loginuser', methods=["POST"])
+def loginuser():
+    username = request.form.get("username")
+    password = request.form.get("password")
+    
+    user_account = UserAccount.query.filter_by(username=username, password=password).first()
+    
+    if user_account:
+        session['loggedin'] = True
+        session['username'] = username
+        return render_template("index.html", username=username, loggedin=True)
+    else:
+        return render_template("login.html")
+    
+    
 @app.route('/signup')
 def signup():
     return render_template("signup.html")
@@ -67,3 +100,6 @@ def register():
 if __name__ == "__main__":
     # app.run()
     app.run(debug=True, port=8080)
+
+#  <a class="btn btn-primary" href="{{ url_for('edit') }}">Edit Account</a>
+#     <a class="btn btn-primary" href="{{ url_for('delete') }}">Delete Account</a>

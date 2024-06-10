@@ -3,7 +3,6 @@
 {% block main %}
 {% if username %}
     <h2>Welcome, {{ username }}</h2>
-<a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
 {% endif %}
 
 <h1>Login</h1>
@@ -19,7 +18,7 @@
         <div id="card-login-body">
             <fieldset class="text-primary">
                 <legend>Please enter your details below.</legend>
-                <form id="login-form" class="mb-3" action="/login" method="POST">
+                <form id="login-form" class="mb-3" action="{{url_for('loginuser')}}" method="POST">
                     <div class="mb-3">
                         <label for="username" class="form-label">UserName</label>
                         <input type="text" class="form-control" id="username" name="username">
