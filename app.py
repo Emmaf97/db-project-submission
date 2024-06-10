@@ -24,28 +24,28 @@ def index():
 @app.route("/esports")
 def esports():
      if 'loggedin' in session and session['loggedin']:
-        return render_template('index.html', username=session.get('username'))
+        return render_template('esports.html', username=session.get('username'))
      else:
         return render_template("esports.html")
 
 @app.route("/news")
 def news():
      if 'loggedin' in session and session['loggedin']:
-        return render_template('index.html', username=session.get('username'))
+        return render_template('news.html', username=session.get('username'))
      else:
         return render_template("news.html")
 
 @app.route("/store")
 def store():
      if 'loggedin' in session and session['loggedin']:
-        return render_template('index.html', username=session.get('username'))
+        return render_template('store.html', username=session.get('username'))
      else:
         return render_template("store.html")
 
 @app.route("/contact")
 def contact():
      if 'loggedin' in session and session['loggedin']:
-        return render_template('index.html', username=session.get('username'))
+        return render_template('contact.html', username=session.get('username'))
      else:
         return render_template("contact.html")
 
@@ -72,7 +72,21 @@ def logout():
     session.pop('loggedin', None)
     session.pop('username', None)
     return render_template("login.html")
+
+@app.route('/deleteuser', methods=["GET", "POST"])
+def deleteuser():
+    username = session.get('username')
     
+    # Find the user by username
+    user = UserAccount.query.filter_by(username=username).first()
+    
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+        return redirect(url_for('signup.html'))
+    else:
+        return "User not found", 404  # Not Found
+
 @app.route('/signup')
 def signup():
     return render_template("signup.html")
@@ -85,8 +99,7 @@ def register():
         lname = request.form.get("lname"),
         address = request.form.get("address")
     )
-    # new_user = User(fname='John', lname='Doe', address='123 Main St')
-    # db.session.add(new_user)
+    
     db.session.add(new_User)
     
     new_UserAccount = UserAccount(
@@ -95,8 +108,7 @@ def register():
         password = request.form.get("password")
         
     )
-    # new_user_account = UserAccount(username='johndoe', password='hashed_password')
-    # db.session.add(new_user_account)
+    
     db.session.add(new_UserAccount)
     db.session.commit()
     
@@ -105,6 +117,3 @@ def register():
 if __name__ == "__main__":
     # app.run()
     app.run(debug=True, port=8080)
-
-#  <a class="btn btn-primary" href="{{ url_for('edit') }}">Edit Account</a>
-#     <a class="btn btn-primary" href="{{ url_for('delete') }}">Delete Account</a>

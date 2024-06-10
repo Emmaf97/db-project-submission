@@ -2,6 +2,7 @@
 
 {% if username %}
     <h2>Welcome, {{ username }}</h2>
+    <a class="btn btn-primary" href="{{ url_for('deleteuser') }}">Delete Account</a>
 {% endif %}
 
 {% block main %}
